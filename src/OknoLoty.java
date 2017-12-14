@@ -1,6 +1,8 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -71,13 +73,24 @@ public class OknoLoty extends JFrame {
 	private JPanel stworzPanelWyszukiwania() {
 		JPanel panel = new JPanel();
 		panel.add(new JLabel("Sk¹d"));
-		panel.add(new JTextField(25));
+		JTextField skad = new JTextField(25);
+		panel.add(skad);
+		JTextField dokad = new JTextField(25);
 		panel.add(new JLabel("Dok¹d"));
-		panel.add(new JTextField(25));
-		panel.add(new JButton("Szukaj"));
+		panel.add(dokad);
+		JButton przyciskSzukaj = new JButton("Szukaj");
+		przyciskSzukaj.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showConfirmDialog(panel,"Wpisano sk¹d: "+skad.getText()+" Do: "+dokad.getText());
+			}
+		});
+		panel.add(przyciskSzukaj);
 		
 		
 		return panel;
 	}
+
+
 	
 }
