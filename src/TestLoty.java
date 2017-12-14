@@ -13,6 +13,7 @@ public static void main(String[] args) {
 	
 	OknoLoty okno = new OknoLoty();
 	Database database = new Database();
+	database.getFlights();
 	
 }
 
